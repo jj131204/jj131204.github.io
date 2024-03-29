@@ -1,0 +1,9 @@
+[{
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+        "namespace": "android_app",
+        "package_name": "com.example.trazabilidad_granjas_red_azul",
+        "sha256_cert_fingerprints":
+        ["BB:37:B6:72:F0:BB:1F:6C:2C:B8:C8:F0:01:CD:42:D1:4C:03:D9:0B:92:1E:D0:1E:C5:F6:BF:20:26:CE:05:D5"]
+    }
+}]
