@@ -19,9 +19,9 @@ function verificarCrecimiento(){
         for (let t = 0; t <= dias; t++) {
             labels.push(`Día ${t}`);
             const Nt = N0 * Math.exp(r * t);
-            datos.push(Math.round(Nt));
-            N0 = Nt;
+            datos.push(Nt);
         }
+        
 
         // 🔹 Destruir gráfico anterior si existe
         if (chart) {
@@ -47,7 +47,7 @@ function verificarCrecimiento(){
                 }]
             },
             options: {
-                responsive: true, //
+                responsive: false, //
                 scales: {
                 y: {
                     beginAtZero: false,
