@@ -5,33 +5,31 @@
     <meta charset="UTF-8" />
     <title>Crecimiento Tumoral</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <style>
-        #tumorChart {
-                width: 400px !important;
-                height: 400px !important;
-                display: none;
-            }
-    </style>
+    <link rel="stylesheet" href="../styles/globalStyles.css">
+    <link rel="stylesheet" href="../styles/exponentialModels.css">
 </head>
 <body>
-    <section>
-        <h2>Gráfico de crecimiento tumoral</h2>
-        <div class="containerForm">
-            <label for="celulasIniciales">
-                <span>Células iniciales</span>
-                <input type="number" name="" id="celulasIniciales">
-            </label>
-            <label for="tasaDeCrecimiento">
-                <span>Tasa de crecimiento diaria</span>
-                <input type="number" name="" id="tasaDeCrecimiento">
-            </label>
-            <label for="diasGraficados">
-                <span>Número de días a graficar</span>
-                <input type="number" name="" id="diasGraficados">
-            </label>
-            <input type="submit" value="Calcular" onclick="verificarCrecimiento()">
-        </div>
-        <canvas id="tumorChart" style="width: 500px !important; height: 300px !important;"></canvas>
+    <section class="allInfo">
+        <div class="containerGraphic borderRadius generalShadow">
+            <h1>Gráfico de crecimiento tumoral</h1>
+            <div class="containerForm">
+                <div class="containerInputs">
+                    <label for="celulasIniciales" class="labelInputs">
+                        <span>Células iniciales</span>
+                        <input type="number" class="generalShadow" id="celulasIniciales">
+                    </label>
+                    <label for="tasaDeCrecimiento" class="labelInputs">
+                        <span>Tasa de crecimiento diaria</span>
+                        <input type="number" class="generalShadow" id="tasaDeCrecimiento">
+                    </label>
+                    <label for="diasGraficados" class="labelInputs">
+                        <span>Número de días a graficar</span>
+                        <input type="number" class="generalShadow" id="diasGraficados">
+                    </label>
+                </div>
+                <input type="submit" class="buttonCalculate generalShadow" value="Calcular" onclick="verificarCrecimiento()">
+            </div>
+            <canvas id="tumorChart" style="width: 500px !important; height: 300px !important;"></canvas></div>
     </section>
 </body>
 </html>

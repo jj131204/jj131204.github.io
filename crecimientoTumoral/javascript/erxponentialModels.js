@@ -38,6 +38,10 @@ function verificarCrecimiento(){
                 borderColor: 'rgba(49,148,210, 1)',
                 backgroundColor: 'rgba(49,148,210, 0.2)',
                 fill: true,
+                padding: {
+                    top: 20, // Espacio desde arriba
+                    bottom: 30 // Espacio entre el título y la gráfica
+                },
                 tension: 0.3
                 }]
             },

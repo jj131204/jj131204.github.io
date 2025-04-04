@@ -1,0 +1,69 @@
+#tumorChart{
+    display: none;
+    width: max-content !important;
+    min-width: 600px !important;
+    object-fit: scale-down;
+}
+
+.allInfo{
+    width: 100vw;
+    min-height: 100vh;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+.containerGraphic{
+    width: 90%;
+    margin: 40px 5%;
+    background-color: #FFFFFF;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    row-gap:40px;
+    align-items: center;
+}
+
+.containerForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 20px;
+}
+
+.containerInputs{
+    display: flex;
+    justify-content:center;
+    width: 100%;
+    flex-wrap: wrap;
+    column-gap: 30px;
+    row-gap: 30px;
+}
+
+.labelInputs{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 10px;
+
+    input{
+        appearance: textfield;
+        text-align: center;
+        padding: 10px;
+        border-radius: 10px;
+        border: 0;
+        background-color: #FFFFFF;
+    }
+}
+
+.buttonCalculate{
+    background-color: var(--blue1);
+    color: var(--white);
+    border: 0;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius:10px;
+    cursor: pointer;
+    width: max-content;
+}
