@@ -9,7 +9,7 @@ function verificarCrecimiento(){
     if(celulasIniciales != "" && tasaDeCrecimiento != "" && diasGraficados != ""){
         tumorChart.style.display = "flex";
 
-        const N0 = parseFloat(celulasIniciales); // Células iniciales
+        let N0 = parseFloat(celulasIniciales); // Células iniciales
         const r = parseFloat(tasaDeCrecimiento);     // Tasa de crecimiento diaria
         const dias = parseInt(diasGraficados);    // Número de días a graficar
 
@@ -20,6 +20,7 @@ function verificarCrecimiento(){
             labels.push(`Día ${t}`);
             const Nt = N0 * Math.exp(r * t);
             datos.push(Math.round(Nt));
+            N0 = Nt;
         }
 
         // 🔹 Destruir gráfico anterior si existe
