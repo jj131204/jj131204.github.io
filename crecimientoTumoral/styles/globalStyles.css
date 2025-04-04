@@ -46,3 +46,8 @@ body{
     background-color: #F8F8F8;
     background-size: auto 100vh;
 }
+
+.titleSection{
+    text-align: center;
+    color: var(--blue1);
+}
