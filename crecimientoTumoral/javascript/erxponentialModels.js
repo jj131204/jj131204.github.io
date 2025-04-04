@@ -47,7 +47,9 @@ function verificarCrecimiento(){
                 }]
             },
             options: {
-                responsive: false, //
+                responsive: true, // ← ¡Importante!
+                maintainAspectRatio: true, // Mantiene proporciones
+                aspectRatio: 2, 
                 scales: {
                 y: {
                     beginAtZero: false,

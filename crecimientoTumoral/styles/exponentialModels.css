@@ -1,8 +1,9 @@
 #tumorChart{
     display: none;
-    /* width: max-content !important;
-    min-width: 600px !important; */
-    object-fit: scale-down;
+    width: max-content !important;
+    min-width: 800px !important;
+    object-fit: fill !important;
+    min-height: 400px !important;
 }
 
 .allInfo{
