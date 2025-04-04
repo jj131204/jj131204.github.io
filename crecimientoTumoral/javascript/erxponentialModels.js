@@ -47,7 +47,7 @@ function verificarCrecimiento(){
                 }]
             },
             options: {
-                responsive: false,
+                responsive: true, //
                 scales: {
                 y: {
                     beginAtZero: false,
