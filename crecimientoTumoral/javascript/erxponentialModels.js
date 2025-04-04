@@ -9,9 +9,9 @@ function verificarCrecimiento(){
     if(celulasIniciales != "" && tasaDeCrecimiento != "" && diasGraficados != ""){
         tumorChart.style.display = "flex";
 
-        let N0 = parseFloat(celulasIniciales); // Células iniciales
-        const r = parseFloat(tasaDeCrecimiento);     // Tasa de crecimiento diaria
-        const dias = parseInt(diasGraficados);    // Número de días a graficar
+        let N0 = parseFloat(celulasIniciales);
+        const r = parseFloat(tasaDeCrecimiento);
+        const dias = parseInt(diasGraficados);
 
         const labels = [];
         const datos = [];
@@ -40,15 +40,15 @@ function verificarCrecimiento(){
                 backgroundColor: 'rgba(49,148,210, 0.2)',
                 fill: true,
                 padding: {
-                    top: 20, // Espacio desde arriba
-                    bottom: 30 // Espacio entre el título y la gráfica
+                    top: 20,
+                    bottom: 30
                 },
                 tension: 0.3
                 }]
             },
             options: {
-                responsive: true, // ← ¡Importante!
-                maintainAspectRatio: true, // Mantiene proporciones
+                responsive: true,
+                maintainAspectRatio: true,
                 aspectRatio: 2, 
                 scales: {
                 y: {

@@ -27,7 +27,6 @@ function verificarCrecimiento(){
             console.log(datos);
         }
 
-        // 🔹 Destruir gráfico anterior si existe
         if (chart) {
             chart.destroy();
         }
@@ -44,15 +43,15 @@ function verificarCrecimiento(){
                     backgroundColor: 'rgba(49,148,210, 0.2)',
                     fill: true,
                     padding: {
-                        top: 20, // Espacio desde arriba
-                        bottom: 30 // Espacio entre el título y la gráfica
+                        top: 20,
+                        bottom: 30
                     },
                     tension: 0.3
                 }]
             },
             options: {
-                responsive: true, // ← ¡Importante!
-                maintainAspectRatio: true, // Mantiene proporciones
+                responsive: true,
+                maintainAspectRatio: true,
                 aspectRatio: 2, 
                 scales: {
                 y: {
