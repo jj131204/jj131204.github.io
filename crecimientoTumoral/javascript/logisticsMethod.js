@@ -1,49 +1,53 @@
 let chart = null; 
 function verificarCrecimiento(){
-
     let tumorChart = document.getElementById("tumorChart");
+    let capacidadCarga = document.getElementById("capacidadCarga").value;
     let celulasIniciales = document.getElementById("celulasIniciales").value;
     let tasaDeCrecimiento = document.getElementById("tasaDeCrecimiento").value;
     let diasGraficados = document.getElementById("diasGraficados").value;
 
-    if(celulasIniciales != "" && tasaDeCrecimiento != "" && diasGraficados != ""){
+    if(capacidadCarga != "" && celulasIniciales != "" && tasaDeCrecimiento != "" && diasGraficados != ""){
+
         tumorChart.style.display = "flex";
 
-        let N0 = parseFloat(celulasIniciales); // Células iniciales
-        const r = parseFloat(tasaDeCrecimiento);     // Tasa de crecimiento diaria
-        const dias = parseInt(diasGraficados);    // Número de días a graficar
+        let P0 = parseFloat(celulasIniciales);
+        const k = parseFloat(capacidadCarga);
+        const r = parseFloat(tasaDeCrecimiento);
+        let dias = parseInt(diasGraficados);
 
         const labels = [];
         const datos = [];
 
         for (let t = 0; t <= dias; t++) {
             labels.push(`Día ${t}`);
-            const Nt = N0 * Math.exp(r * t);
+            const Nt = k / (1 + ((k - P0) / P0) * Math.exp(-r * t));
             datos.push(Nt);
+            
+            console.log(labels);
+            console.log(datos);
         }
-        
 
         // 🔹 Destruir gráfico anterior si existe
         if (chart) {
-        chart.destroy();
+            chart.destroy();
         }
-
+    
         const ctx = document.getElementById('tumorChart').getContext('2d');
         chart = new Chart(ctx, {
             type: 'line',
             data: {
                 labels: labels,
                 datasets: [{
-                label: 'Número de células tumorales',
-                data: datos,
-                borderColor: 'rgba(49,148,210, 1)',
-                backgroundColor: 'rgba(49,148,210, 0.2)',
-                fill: true,
-                padding: {
-                    top: 20, // Espacio desde arriba
-                    bottom: 30 // Espacio entre el título y la gráfica
-                },
-                tension: 0.3
+                    label: 'Número de células tumorales',
+                    data: datos,
+                    borderColor: 'rgba(49,148,210, 1)',
+                    backgroundColor: 'rgba(49,148,210, 0.2)',
+                    fill: true,
+                    padding: {
+                        top: 20, // Espacio desde arriba
+                        bottom: 30 // Espacio entre el título y la gráfica
+                    },
+                    tension: 0.3
                 }]
             },
             options: {
@@ -70,12 +74,10 @@ function verificarCrecimiento(){
                 }
             }
         });
+
     }else{
         tumorChart.style.display = "none";
-        console.log("Ingresa todos los valores...");
+
+        console.log("Ingresa todo los datos");
     }
-
-    
-
-    
 }
