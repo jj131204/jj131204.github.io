@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="../styles/globalStyles.css">
+    <link rel="stylesheet" href="../styles/models.css">
+    <title>Modelo de Gompertz</title>
+</head>
+<body>
+    <section class="allInfo">
+        <div class="containerGraphic borderRadius generalShadow">
+            <h1>Gráfico de modelo de Gompertz</h1>
+            <div class="containerForm">
+                <div class="containerInputs">
+                    <label for="valorMaximo" class="labelInputs">
+                        <span>Valor máximo o asintótico</span>
+                        <input type="number" class="generalShadow" id="valorMaximo">
+                    </label>
+                    <label for="desplazamientoHorizontal" class="labelInputs">
+                        <span>Desplazamiento horizontal</span>
+                        <input type="number" class="generalShadow" id="desplazamientoHorizontal">
+                    </label>
+                    <label for="tasaDeCrecimiento" class="labelInputs">
+                        <span>Tasa de crecimiento</span>
+                        <input type="number" class="generalShadow" id="tasaDeCrecimiento">
+                    </label>
+                    <label for="diasGraficados" class="labelInputs">
+                        <span>Número de días a graficar</span>
+                        <input type="number" class="generalShadow" id="diasGraficados">
+                    </label>
+                </div>
+                <input type="submit" class="buttonCalculate generalShadow" value="Calcular" onclick="verificarCrecimiento()">
+            </div>
+            <canvas id="tumorChart" style="width: 500px !important; height: 300px !important;"></canvas></div>
+    </section>
+</body>
+    <script src="../javascript/gompertzModel.js"></script>
+</html>
