@@ -6,13 +6,43 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="../../styles/globalStyles.css">
     <link rel="stylesheet" href="../../styles/models.css">
-    <title>Modelo de Gompertz</title>
+    <title>Energía potencial total</title>
 </head>
 <body>
     <section class="allInfo">
         <div class="containerGraphic borderRadius generalShadow">
-            <h1>Gráfico de modelo de Gompertz</h1>
-            <input type="submit" class="buttonCalculate generalShadow" value="Calcular" onclick="verificarCrecimiento()">
+            <h1>Energía potencial total</h1>
+            <div class="containerForm">
+                <form class="containerInputs" id="form" onsubmit="graficar(event)">
+                    <label for="c" class="labelInputs">
+                        <span>Constante C (J·m⁶)</span>
+                        <input type="number" class="generalShadow" id="c" value="1e-77" required>
+                    </label>
+                    <label for="epsilon" class="labelInputs">
+                        <span>Permitividad ε (C²/N·m²):</span>
+                        <input type="number" class="generalShadow" id="epsilon" value="8.854e-12" required>
+                    </label>
+                    <label for="q1" class="labelInputs">
+                        <span>Carga q1 (C):</span>
+                        <input type="number" class="generalShadow" id="q1" value="1.6e-19" required>
+                    </label>
+                    <label for="q2" class="labelInputs">
+                        <span>Carga q2 (C):</span>
+                        <input type="number" class="generalShadow" id="q2" value="1.6e-19" required>
+                    </label>
+                    <label for="rMin" class="labelInputs">
+                        <span>Distancia mínima r (m):</span>
+                        <input type="number" class="generalShadow" id="rMin" value="1e-10" required>
+                    </label>
+                    <label for="rMax" class="labelInputs">
+                        <span>Distancia máxima r (m):</span>
+                        <input type="number" class="generalShadow" id="rMax" value="1e-8" required>
+                    </label>
+                    
+                </form>
+                <input type="submit" class="buttonCalculate generalShadow" value="Calcular" form="form">
+            </div>
+            
             <canvas class="styleGraphic" id="vdw" style="width: 500px !important; height: 300px !important;"></canvas>
 
             <canvas class="styleGraphic" id="elec" style="width: 500px !important; height: 300px !important;"></canvas>
