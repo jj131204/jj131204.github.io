@@ -1,4 +1,5 @@
-#tumorChart{
+#tumorChart,
+.styleGraphic{
     display: none;
     /* width: max-content !important;
     min-width: 800px !important; */
