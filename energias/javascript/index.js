@@ -1,4 +1,6 @@
-let chart = null; 
+let energyChart = null; 
+let energyChart1 = null; 
+let energyChart2 = null; 
 function graficar(event){
     event.preventDefault();
 
@@ -39,12 +41,12 @@ function graficar(event){
     if (energyChart) {
         energyChart.destroy();
     }
-    if (energyChart1) {
-        energyChart1.destroy();
-    }
-    if (energyChart2) {
-        energyChart2.destroy();
-    }
+    // if (energyChart1) {
+    //     energyChart1.destroy();
+    // }
+    // if (energyChart2) {
+    //     energyChart2.destroy();
+    // }
 
     // Crear gráfico
     const ctx = document.getElementById('vdw').getContext('2d');
