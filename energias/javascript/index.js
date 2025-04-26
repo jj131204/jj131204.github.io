@@ -36,9 +36,19 @@ function graficar(event){
         U_total.push(vdw + elec);
     }
 
+    if (energyChart) {
+        energyChart.destroy();
+    }
+    if (energyChart1) {
+        energyChart1.destroy();
+    }
+    if (energyChart2) {
+        energyChart2.destroy();
+    }
+
     // Crear gráfico
     const ctx = document.getElementById('vdw').getContext('2d');
-    const energyChart = new Chart(ctx, {
+    energyChart = new Chart(ctx, {
         type: 'line',
         data: {
             labels: r_values,
@@ -85,7 +95,7 @@ function graficar(event){
 
 
     const ctx1 = document.getElementById('elec').getContext('2d');
-    const energyChart1 = new Chart(ctx1, {
+    energyChart1 = new Chart(ctx1, {
         type: 'line',
         data: {
             labels: r_values,
@@ -132,7 +142,7 @@ function graficar(event){
 
 
     const ctx2 = document.getElementById('vdw+elec').getContext('2d');
-    const energyChart2 = new Chart(ctx2, {
+    energyChart2 = new Chart(ctx2, {
         type: 'line',
         data: {
             labels: r_values,
