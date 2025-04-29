@@ -1,27 +1,29 @@
 let chart = null; 
 function verificarCrecimiento(){
     let tumorChart = document.getElementById("tumorChart");
-    let valorMaximo = document.getElementById("valorMaximo").value;
-    let desplazamientoHorizontal = document.getElementById("desplazamientoHorizontal").value;
+    let celulasIniciales = document.getElementById("celulasIniciales").value;
+    let factorDesaceleracion = document.getElementById("factorDesaceleracion").value;
     let tasaDeCrecimiento = document.getElementById("tasaDeCrecimiento").value;
     let diasGraficados = document.getElementById("diasGraficados").value;
     const labels = [];
     const datos = [];
 
-    if(valorMaximo != "" && desplazamientoHorizontal != "" && tasaDeCrecimiento != "" && diasGraficados != ""){
+    if(celulasIniciales != "" && factorDesaceleracion != "" && tasaDeCrecimiento != "" && diasGraficados != ""){
 
         tumorChart.style.display = "flex";
 
-        const N0 = parseFloat(valorMaximo);
-        const b = parseFloat(desplazamientoHorizontal);
+        const N0 = parseFloat(celulasIniciales);
+        const b = parseFloat(factorDesaceleracion);
         const c = parseFloat(tasaDeCrecimiento);
         const dias = parseFloat(diasGraficados);
 
         for (let t = 0; t <= dias; t++) {
             labels.push(`Día ${t}`);
-            const Nt = N0 * Math.exp(b * Math.exp(-c * t));
+            const Nt = N0 * Math.exp(-b * Math.exp(-c * t));
             datos.push(Nt);
+            console.log(Nt)
         }
+
     
 
         if (chart) {
