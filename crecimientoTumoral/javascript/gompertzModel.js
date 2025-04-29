@@ -19,7 +19,7 @@ function verificarCrecimiento(){
 
         for (let t = 0; t <= dias; t++) {
             labels.push(`Día ${t}`);
-            const Nt = N0 * Math.exp(-b * Math.exp(-c * t));
+            const Nt = N0 * Math.exp(b * Math.exp(-c * t));
             datos.push(Nt);
         }
     
